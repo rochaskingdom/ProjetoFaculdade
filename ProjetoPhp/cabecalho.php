@@ -8,5 +8,3 @@
 <body>
     <div class="container">
         <div class="principal">
-</body>
-</html>

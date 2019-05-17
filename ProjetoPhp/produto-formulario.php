@@ -6,7 +6,6 @@
     Preço: <input type="number" name="preco" /><br/>
 
     <button type="submit">Cadastrar</button>
-
 </form>
 
 <?php include("rodape.php"); ?>
