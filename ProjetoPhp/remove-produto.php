@@ -1,6 +1,6 @@
 <?php include("cabecalho.php");
-include("conecta.php");
-include("banco-produto.php");
+      include("conecta.php");
+      include("banco-produto.php");
 
 $id = $_POST['id'];
 removeProduto($conexao, $id);
