@@ -1,19 +1,30 @@
 <?php
-function usuarioEstaLogado() {
-    return isset($_COOKIE["usuario_logado"]);
+session_start();
+
+function usuarioEstaLogado()
+{
+    return isset($_SESSION["usuario_logado"]);
 }
 
-function verificaUsuario() {
-    if(!usuarioEstaLogado()) {
+function verificaUsuario()
+{
+    if (! usuarioEstaLogado()) {
         header("Location: index.php?falhaDeSeguranca=true");
         die();
     }
 }
 
-function usuarioLogado() {
-    return $_COOKIE["usuario_logado"];
+function usuarioLogado()
+{
+    return $_SESSION["usuario_logado"];
 }
 
-function logaUsuario($email) {
-    setcookie("usuario_logado", email, time() + 60);
+function logaUsuario($email)
+{
+    $_SESSION["usuario_logado"] = $email;
+}
+
+function logout()
+{
+    session_destroy();
 }

@@ -1,27 +1,31 @@
-<?php include("cabecalho.php"); 
-include("logica-usuario.php");
+<?php
+include ("cabecalho.php");
+include ("logica-usuario.php");
 ?>
 
+<?php if(isset($_GET["logout"]) && $_GET["logout"]==true) { ?>
+<p class="alert-success">Deslogado com sucesso!</p>
+<?php } ?>
+
 <?php if(isset($_GET["login"]) && $_GET["login"]==true) { ?>
-	<p class="alert-success">Logado com sucesso!</p>
-<?php }?>
-<?php
-if(isset($_GET["login"]) && $_GET["login"]==false) {?>
-	<p class="alert-danger">Usuario ou senha invalida!</p>
-<?php }?>
-<?php
-if(isset($_GET["login"]) && $_GET["login"]==false) {?>
-	<p class="alert-danger">Você não tem acesso a essa funcionalidade!</p>
-<?php }?>
+<p class="alert-success">Logado com sucesso!</p>
+<?php } ?>
+
+<?php if(isset($_GET["login"]) && $_GET["login"]==false) { ?>
+<p class="alert-danger">Usuário ou senha inválida!</p>
+<?php } ?>
+
+<?php if(isset($_GET["falhaDeSeguranca"]) && $_GET["falhaDeSeguranca"]==true) { ?>
+<p class="alert-danger">Você não tem acesso a essa funcionalidade!</p>
+<?php } ?>
 
 <h1>Bem vindo!</h1>
 
-	<?php
-if(isset($_COOKIE["usuario_logado"])) {
-?>
-<p class="text-success">Você está logado como <?= usuarioLogado() ?></p>
-<?php }?>
-
+<?php if(usuarioEstaLogado()) { ?>
+<p class="text-success">Você está logado como <?= usuarioLogado() ?>. <a
+		href="logout.php">Deslogar</a>
+</p>
+<?php } else { ?>
 <h2>Login</h2>
 <form action="login.php" method="post">
 	<table class="table">
@@ -34,15 +38,10 @@ if(isset($_COOKIE["usuario_logado"])) {
 			<td><input class="form-control" type="password" name="senha"></td>
 		</tr>
 		<tr>
-			<td><button type="submit" class="btn btn-primary">Login</button></td>
+			<td><button class="btn btn-primary" type="submit">Login</button></td>
 		</tr>
 	</table>
 </form>
-<iframe
- width="600"
- height="450"
- frameborder="0" style="border:0"
- src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDyPpLtaDnFwrlqwYh6hFWY1KBjB3m2A04
- &q=Brasilia+Sobradinho+Sobradinho+shopping" allowfullscreen>
-</iframe>
+<?php } ?>
+
 <?php include("rodape.php"); ?>

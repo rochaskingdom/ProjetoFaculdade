@@ -1,6 +1,8 @@
-<?php include("cabecalho.php");
-      include("conecta.php");
-      include("banco-produto.php"); ?>
+<?php
+include ("cabecalho.php");
+include ("conecta.php");
+include ("banco-produto.php");
+?>
 
 <?php
 
@@ -10,18 +12,20 @@ $preco = $_POST["preco"];
 $descricao = $_POST["descricao"];
 $categoria_id = $_POST['categoria_id'];
 
-if(array_key_exists('usado', $_POST)) {
+if (array_key_exists('usado', $_POST)) {
     $usado = "true";
 } else {
     $usado = "false";
 }
 
-if(alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado)) { ?>
-    <p class="text-success">O produto <?= $nome; ?>, <?= $preco; ?> alterado com sucesso!</p>
-<?php } else {
+if (alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado)) {
+    ?>
+<p class="text-success">O produto <?= $nome; ?>, <?= $preco; ?> alterado com sucesso!</p>
+<?php
+} else {
     $msg = mysqli_error($conexao);
-?>
-    <p class="text-danger">O produto <?= $nome; ?> n√£o foi alterado: <?= $msg ?></p>
+    ?>
+<p class="text-danger">O produto <?= $nome; ?> n„o foi alterado: <?= $msg ?></p>
 <?php
 }
 ?>
