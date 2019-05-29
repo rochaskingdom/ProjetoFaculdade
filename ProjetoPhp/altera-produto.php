@@ -22,6 +22,7 @@ if (alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usad
     ?>
 <p class="text-success">O produto <?= $nome; ?>, <?= $preco; ?> alterado com sucesso!</p>
 <?php
+
 } else {
     $msg = mysqli_error($conexao);
     ?>
