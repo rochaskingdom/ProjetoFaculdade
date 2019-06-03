@@ -39,4 +39,3 @@ Temos nossa sede localizada no Shopping de sobradinho e redes de entrega em Plan
  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDyPpLtaDnFwrlqwYh6hFWY1KBjB3m2A04
  &q=Brasilia+Sobradinho+Sobradinho+shopping" allowfullscreen>
 </iframe>
-<?php include("rodape.php"); ?>

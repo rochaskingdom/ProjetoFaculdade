@@ -30,5 +30,3 @@ if (alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usad
 <?php
 }
 ?>
-
-<?php include("rodape.php"); ?>

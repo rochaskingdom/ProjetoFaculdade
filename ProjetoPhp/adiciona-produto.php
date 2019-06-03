@@ -28,5 +28,3 @@ if (insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado)) {
 <?php
 }
 ?>
-
-<?php include("rodape.php"); ?>

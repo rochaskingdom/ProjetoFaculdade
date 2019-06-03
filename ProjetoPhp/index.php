@@ -20,7 +20,7 @@ include ("logica-usuario.php");
 <h1>Bem vindo!</h1>
 
 <?php if(usuarioEstaLogado()) { ?>
-<p class="text-success">Você está logado como <?= usuarioLogado() ?>. <a
+<p class="text-success">Voce esta logado como <?= usuarioLogado() ?>. <a
 		href="logout.php">Deslogar</a>
 </p>
 <?php } else { ?>
@@ -41,5 +41,3 @@ include ("logica-usuario.php");
 	</table>
 </form>
 <?php } ?>
-
-<?php include("rodape.php"); ?>

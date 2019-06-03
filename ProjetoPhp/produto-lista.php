@@ -36,5 +36,3 @@ include ("logica-usuario.php");
     endforeach
     ?>
 </table>
-
-<?php include("rodape.php"); ?>
